@@ -1,8 +1,0 @@
-create or replace procedure P18Q1 is
-  g_max_deptno number;
-begin
-  select max(deptno) into g_max_deptno from dept;
-
-  dbms_output.put_line(g_max_deptno);
-
-end P18Q1;
