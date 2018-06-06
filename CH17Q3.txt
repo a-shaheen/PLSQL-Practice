@@ -1,9 +1,0 @@
-create or replace procedure ch17q3(p_num1 number, p_num2 number) is
-  v_num1    number(9, 2) := p_num1;
-  v_num2    number(9, 2) := p_num2;
-  v_results number(9, 2);
-
-begin
-  v_results := (v_num1 / v_num2) + v_num2;
-  dbms_output.put_line(v_results);
-end ch17q3;
