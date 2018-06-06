@@ -1,0 +1,9 @@
+create or replace procedure CH17Q4(p_salary number, p_bonus number) is
+  v_salary number := p_salary;
+  v_bonus  number := p_bonus;
+  g_total  number;
+
+begin
+  g_total := nvl(v_salary, 0) * (1 + nvl(v_bonus, 0) / 100);
+  dbms_output.put_line(g_total);
+end CH17Q4;
