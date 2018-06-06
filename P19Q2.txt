@@ -1,0 +1,20 @@
+create or replace procedure P19Q2(p_empno number) is
+  v_sal  emp.sal%type;
+  v_comm number;
+begin
+  select sal into v_sal from emp where empno = p_empno;
+  if v_sal  1000 then
+    v_comm = 0.1;
+  elsif v_sal between 1000 and 1500 then
+    v_comm = 0.15;
+  elsif v_sal  1500 then
+    v_comm = 0.2;
+  else
+    v_comm = 0;
+  
+  end if;
+
+  update emp set comm = nvl(sal, 0)  v_comm where empno = p_empno;
+
+  commit;
+end P19Q2;

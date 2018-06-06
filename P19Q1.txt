@@ -1,0 +1,12 @@
+create or replace procedure P19Q1 is
+begin
+  for i in 1 .. 10 loop
+    if i = 6 or i = 8 then
+      null;
+    else
+      insert into messages (results) values (i);
+    end if;
+  
+    commit;
+  end loop;
+end P19Q1;

@@ -1,0 +1,11 @@
+create or replace procedure P18Q4(p_deptno number) is
+
+begin
+
+  delete from dept where deptno = p_deptno;
+
+  dbms_output.put_line(sql%rowcount || ' rows deleted.');
+
+  Commit;
+
+end P18Q4;
